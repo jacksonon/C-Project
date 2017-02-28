@@ -1,11 +1,12 @@
 //
-//  main.c
+//  LetValue.c
 //  C-Project
 //
-//  Created by jiawei  on 2017/2/27.
+//  Created by jiawei  on 2017/2/28.
 //  Copyright © 2017年 王家伟. All rights reserved.
 //
 
+/*
 #include <stdio.h>
 
 //define 形式定义常量:作用范围整个函数
@@ -25,3 +26,4 @@ int main(int argc, const char * argv[]) {
     
     return 0;
 }
+*/
