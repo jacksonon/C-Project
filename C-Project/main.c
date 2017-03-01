@@ -42,7 +42,7 @@ struct Books {
     char author[50];
     char subject[100];
     int book_id;
-} book;
+};
 
 //---方法的声明---
 void baseLanguage(void);
@@ -59,7 +59,7 @@ void arrayInfo(void);
 void adressAcess(void);
 void charInfo(void);
 void structFucn(void);
-void printBook(struct Books book);
+void printBook(struct Books *book);
 
 int main(int argc, const char * argv[]) {
     
@@ -103,11 +103,11 @@ int main(int argc, const char * argv[]) {
 }
 
 //结构体作为函数参数
-void printBook(struct Books book) {
-    printf( "Book title : %s\n", book.title);
-    printf( "Book author : %s\n", book.author);
-    printf( "Book subject : %s\n", book.subject);
-    printf( "Book book_id : %d\n", book.book_id);
+void printBook(struct Books *book) {
+    printf( "Book title : %s\n", book->title);
+    printf( "Book author : %s\n", book->author);
+    printf( "Book subject : %s\n", book->subject);
+    printf( "Book book_id : %d\n", book->book_id);
 }
 
 //结构体
@@ -127,17 +127,23 @@ void structFucn(void) {
     strcpy( Book2.subject, "Telecom Billing Tutorial");
     Book2.book_id = 6495700;
     
-    /* 输出 Book1 信息 */
+    /*
+    // 输出 Book1 信息
     printf( "Book 1 title : %s\n", Book1.title);
     printf( "Book 1 author : %s\n", Book1.author);
     printf( "Book 1 subject : %s\n", Book1.subject);
     printf( "Book 1 book_id : %d\n", Book1.book_id);
     
-    /* 输出 Book2 信息 */
+    //输出 Book2 信息
     printf( "Book 2 title : %s\n", Book2.title);
     printf( "Book 2 author : %s\n", Book2.author);
     printf( "Book 2 subject : %s\n", Book2.subject);
     printf( "Book 2 book_id : %d\n", Book2.book_id);
+    */
+     
+    //调用输出结构体方法
+    printBook(&Book1);
+    printBook(&Book2);
 }
 
 //字符串
