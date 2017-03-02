@@ -44,6 +44,22 @@ struct Books {
     int book_id;
 };
 
+/*
+ union [union tag]
+ {
+ member definition;
+ member definition;
+ ...
+ member definition;
+ } [one or more union variables];
+ */
+//共用体
+union Data {
+    int i;
+    float f;
+    char str[20];
+};
+
 //---方法的声明---
 void baseLanguage(void);
 void constValue(void);
@@ -60,6 +76,7 @@ void adressAcess(void);
 void charInfo(void);
 void structFucn(void);
 void printBook(struct Books *book);
+void unionFunc(void);
 
 int main(int argc, const char * argv[]) {
     
@@ -99,7 +116,27 @@ int main(int argc, const char * argv[]) {
     //结构体
     structFucn();
     
+    //共用体
+    unionFunc();
+    
     return 0;
+}
+
+//共用体
+void unionFunc(void) {
+    
+    //输出内存大小
+    union Data data;
+    printf("Memory size = %lu\n", sizeof(data));
+    
+    //同一时间只可以使用共用体内一个成员
+    data.i = 10;
+    printf("Data.i = %d\n", data.i);
+    data.f = 220.5;
+    printf("data.f = %f\n", data.f);
+    strcpy(data.str, "C Programing");
+    printf("data/str = %s\n", data.str);
+    printf("Data.i = %d ; data.f = %f ; data/str = %s", data.i, data.f, data.str);
 }
 
 //结构体作为函数参数
